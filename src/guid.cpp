@@ -23,7 +23,7 @@ THE SOFTWARE.
 */
 
 #include <cstring>
-#include "crossguid/guid.hpp"
+#include "guid.hpp"
 
 #ifdef GUID_LIBUUID
 #include <uuid/uuid.h>
@@ -391,6 +391,9 @@ Guid newGuid()
 
 END_XG_NAMESPACE
 
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wall"
 // Specialization for std::swap<Guid>() --
 // call member swap function of lhs, passing rhs
 namespace std
@@ -401,3 +404,4 @@ namespace std
 		lhs.swap(rhs);
 	}
 }
+#pragma clang diagnostic pop

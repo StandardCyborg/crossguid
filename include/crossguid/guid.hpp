@@ -127,6 +127,10 @@ namespace details
 
 END_XG_NAMESPACE
 
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wall"
+
 namespace std
 {
 	// Template specialization for std::swap<Guid>() --
@@ -147,3 +151,4 @@ namespace std
 		}
 	};
 }
+#pragma clang diagnostic pop
